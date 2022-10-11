@@ -7,7 +7,9 @@ export default function input() {
     const dispatch = useDispatch()
 
     const addTodo = () => {
-            
+        dispatch(saveTodo({
+            name : input
+        }))
     }
   return (
     <div>
