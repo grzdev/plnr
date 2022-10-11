@@ -2,25 +2,50 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.app{
+  max-width: 40rem;
+  margin: auto;
+  padding: 1.8rem;
+}
+
+.todo-div{
+  display: flex;
+  justify-content: center;
+  width: 40rem;
+  height: 40rem;
+  background-color: grey;
+  border-radius: 2rem;
+}
+
+.header1{
+  color: white;
+  position: relative;
+  left: 5rem;
+}
+
+.input{
+  margin-top: 35rem;
+  height: 1.4rem;
+  width: 80%;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+input{
+  position: relative;
+  right: 5rem;
+  margin-right: -4rem;
+  outline: none;
+}
+
+button{
+  border: none;
+  border-radius: 2rem;
+  width: 3rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
