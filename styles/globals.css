@@ -33,6 +33,7 @@ body {
   font-size: 0.9rem;
   top: 1rem;
   width: 9rem;
+  margin-right: 19rem;
 }
 
 .todo-check{
@@ -71,4 +72,20 @@ body {
 
 .todo-label-done{
   text-decoration: line-through;
+}
+
+.delete-button{
+  position:relative;
+  left: 8rem;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  background: none;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+.input-box{
+  position: fixed;
+  top: 35rem;
 }

@@ -8,11 +8,13 @@ export default function input() {
 
     const addTodo = () => {
         dispatch(saveTodo({
-            name : input
+            name : input,
+            done: false,
+            id: Date.now()
         }))
     }
   return (
-    <div>
+    <div className='input-box'>
         <input
             type="text" className='input'
             value={input} onChange={(e)=> setInput(e.target.value)}

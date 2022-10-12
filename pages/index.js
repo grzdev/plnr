@@ -5,14 +5,15 @@ import { selectTodoList } from '../redux/slices/todoSlice'
 
 export default function Home() {
   const todolist = useSelector(selectTodoList)
+  
   return (
     <div className='app'>
     <div className='todo-div'>
       <div className='todo-container'>
-        {todolist.map(todo => (
+        {todolist.map((todo) => (
           <TodoItem
           key={todo.id}
-          name = {todo.item}
+          name = {todo.name}
           done = {todo.done}
           />
         ))}
