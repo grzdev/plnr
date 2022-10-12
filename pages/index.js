@@ -13,6 +13,7 @@ export default function Home() {
         {todolist.map((todo) => (
           <TodoItem
           key={todo.id}
+          id={todo.id}
           name = {todo.name}
           done = {todo.done}
           />
