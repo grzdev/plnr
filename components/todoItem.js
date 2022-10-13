@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { MdDeleteOutline } from "react-icons/md"
 import { deleteTodo } from '../redux/slices/todoSlice'
 
-export default function todoItem({name, done, id}) {
+export default function TodoItem({name, done, id}) {
   const dispatch = useDispatch()
 
     const handleCheckTodo = () =>{

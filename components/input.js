@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { saveTodo } from '../redux/slices/todoSlice'
 
-export default function input() {
+export default function Input() {
     const [ input, setInput ] = useState("")
     const dispatch = useDispatch()
 
