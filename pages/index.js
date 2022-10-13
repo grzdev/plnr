@@ -1,5 +1,5 @@
-import Input from '../components/Input'
-import TodoItem from '../components/TodoItem'
+import Input from "../components/input"
+import TodoItem from "../components/todoItem"
 import { useSelector } from 'react-redux'
 import { selectTodoList } from '../redux/slices/todoSlice'
 
