@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { BsPlusLg } from "react-icons/bs"
 import { saveTodo } from '../redux/slices/todoSlice'
 
 export default function Input() {
@@ -22,7 +23,9 @@ export default function Input() {
         <button
             className='button'
             onClick={addTodo}
-        >Add</button>
+        >
+            <BsPlusLg className='add-icon'/>
+        </button>
     </div>
   )
 }

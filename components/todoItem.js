@@ -24,10 +24,16 @@ export default function TodoItem({name, done, id}) {
             className='todo-check'
             onChange={handleCheckTodo}
         />
+        <div className='todo-task'>
         <label
             htmlFor="todo"
             className={done && 'todo-label-done'}
+            style={{
+              fontSize:"1rem",
+              fontFamily: "'Poppins', sans-serif"
+            }}
         >{name}</label>
+        </div>
 
         <button className='delete-button' onClick={()=> handleRemoveTodo()}> 
           <MdDeleteOutline />
