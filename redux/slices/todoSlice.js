@@ -4,6 +4,8 @@ const initialState = {
     todolist: []
 }
 
+// const todoStore =  localStorage.setItem('todolist', JSON.stringify(todolist))
+
 const todoSlice = createSlice({
     name: "todos",
     initialState,
