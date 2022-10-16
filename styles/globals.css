@@ -1,7 +1,7 @@
 html,
 body {
+  overflow-y: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: #bee1ff;
 }
 
 .app{
@@ -10,84 +10,26 @@ body {
   padding: 1.8rem;
 }
 
-/* .todo-div{
+.dark {
+  background-color: #17181F;
+  color: #fff;
+}
+.light {
+  background-color: #bee1ff;
+  color: #333;
+}
+
+
+.darkMode{
+  position: relative;
+  top: 10rem;
   display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
   justify-content: center;
-  align-items: center;
-  width: 30rem;
-  height: 35rem;
-  background-color: #89CFF0;
-  border-radius: 1.5rem;
-  box-shadow:' 0 0.625rem 1.3rem -0.325rem #848b90'
 }
-
-
-.todo-label{  
-  font-size: 0.9rem;
-  top: 1rem;
-  width: 9rem;
-  margin-right: 19rem;
-}
-
-.todo-check{
-  cursor: pointer;
-}
-
-.input{
-  border: none;
-  outline: none;
-  border-radius: 1rem;
-  height: 1.4rem;
-  margin-right: 0.3rem;
-}
-
-.button{
-  border-radius: 1rem;
-  height: 1.4rem;
-  border: none;
-  color: white;
-  background-color: #002D62;
-}
-
-.todo-container{
-  margin-bottom: 19rem;
-}
-
-.todoItem{
-  width: 18rem;
-  height: 1.8rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  margin-top: 0.7rem;
-}
-
-.todo-label-done{
-  text-decoration: line-through;
-}
-
-.delete-button{
-  position:fixed;
-  left: 54rem;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  background: none;
-  margin-top: 0.4rem;
-  cursor: pointer;
-}
-
-.input-box{
-  position: fixed;
-  top: 35rem;
-} */
 
 .app{
   width: 18rem;
-  height: 18rem;
+  height: 20rem;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -98,11 +40,12 @@ body {
 }
 
 .header1{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   color: white;
   position: relative;
-  left: 4rem;
-  bottom: 1.2rem;
+  left: 4.7rem;
+  bottom: 1.5rem;
 }
 
 .header-div{
@@ -125,8 +68,8 @@ body {
   align-self: center;
   justify-content: center;
   position: absolute;
-  top: 15.5rem;
-  left: 5.7rem;
+  top: 17rem;
+  left: 5.4rem;
 }
 
 .input{
@@ -180,7 +123,9 @@ body {
 
 .todo-task{
   font-size: 20px;
+  color: black;
 }
+
 
 .todo-check{
   margin-top: 0.3rem;
@@ -200,3 +145,65 @@ body {
   margin-left: 2rem;
 }
 
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

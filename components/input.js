@@ -4,25 +4,23 @@ import { BsPlusLg } from "react-icons/bs"
 import { saveTodo } from '../redux/slices/todoSlice'
 
 export default function Input() {
-    const [ input, setInput ] = useState([], ()=>{
-        const localData = localStorage.getItem('input');
-        return localData ? JSON.parse(localData) : []
-    })
-    useEffect(()=>{
-        localStorage.setItem('input', JSON.stringify(input))
-    }, [input])
+    const [ input, setInput ] = useState('')
+        
+    //     ()=>{
+    //     const localData = localStorage.getItem('input');
+    //     return localData ? JSON.parse(localData) : []
+    // })
+    // useEffect(()=>{
+    //     localStorage.setItem('input', JSON.stringify(input))
+    // }, [input])
 
     const dispatch = useDispatch()
-
-    
-    const date = new Date();
-    const dateTimeInSeconds = Math.floor(date.getTime() / 1000);
 
     const addTodo = () => {
         dispatch(saveTodo({
             name : input,
             done: false,
-            id: dateTimeInSeconds
+            id: Date.now()
         }))
     }
   return (
@@ -31,7 +29,7 @@ export default function Input() {
             type="text" className='input'
             value={input}
             onChange={(e)=> setInput(e.target.value)}
-            placeholder="Add new..."
+            placeholder="Add new todo..."
         />
         <button
             className='button'
