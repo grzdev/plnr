@@ -15,7 +15,7 @@ body {
   color: #fff;
 }
 .light {
-  background-color: #bee1ff;
+  background-color: #677a8a;
   color: #333;
 }
 
@@ -29,7 +29,7 @@ body {
 .app{
   width: 18rem;
   height: 20rem;
-  background-color: white;
+  background-color:#b1b5c9;
   display: flex;
   justify-content: center;
   position: relative;
@@ -51,7 +51,7 @@ body {
   width: 18rem;
   height: 1rem;
   border-radius: 0.7rem;
-  background-color: #1292FF;
+  background-color: #09497f;
   display: flex;
   max-width: 40rem;
   margin: auto;
@@ -86,7 +86,7 @@ body {
   height: 2.5rem;
   border-radius: 18rem;
   border: none;
-  background-color: #1292ff;
+  background-color:#09497f;
   color: white;
   margin-top: 0.6rem;
   display: flex;
@@ -127,14 +127,14 @@ body {
 
 
 .todo-check{
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   width: 18px;
   height: 18px;
   margin-right: 1rem;
 }
 
 .delete-button{
-  color: #59B3FF;
+  color: #09497f;
   border: none;
   font-size: 1.2rem;
   border: none;
