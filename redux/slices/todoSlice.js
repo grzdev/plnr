@@ -26,7 +26,10 @@ const todoSlice = createSlice({
             })
         },
         deleteTodo:(state, action) => {
-            state.todolist.splice(action.payload, 1)
+            // state.todolist.splice(action.payload, 1)
+            return { todolist: state.todolist.filter(todo =>
+                todo.id !== action.payload.id
+             )}
         }
     }
 })
