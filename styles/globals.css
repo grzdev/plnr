@@ -19,10 +19,9 @@ body {
   color: #333;
 }
 
-
 .darkMode{
   position: relative;
-  top: 10rem;
+  top: 6rem;
   display: flex;
   justify-content: center;
 }
@@ -34,7 +33,7 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 7rem;
+  top: 5rem;
   border-radius: 1rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
@@ -58,7 +57,7 @@ body {
   margin: auto;
   padding: 1.8rem;
   position: relative;
-  top: 6rem;
+  top: 4rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
