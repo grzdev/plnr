@@ -72,7 +72,7 @@ body {
 }
 
 .input{
-  border: 3px solid #1292ff;
+  border: 3px solid #09497f;
   border-radius: 0.4rem;
   
 }
@@ -127,7 +127,7 @@ body {
 
 
 .todo-check{
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
   width: 18px;
   height: 18px;
   margin-right: 1rem;
