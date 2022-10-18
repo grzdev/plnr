@@ -46,6 +46,18 @@ export default function Home() {
   }, [theme]);
 
   
+  //Loop
+  let todos = [];
+  filteredTodos.forEach((todo)=>{
+    todos.push(<TodoItem
+      key={todo.id}
+      id={todo.id}
+      name = {todo.name}
+      done = {todo.done}
+      />)
+  })
+
+  
   return (
     <div>
       <div className="header-div">
@@ -59,14 +71,7 @@ export default function Home() {
         </div>
         <div className='todo-div'>
           <div className='todo-container'>
-            {filteredTodos?.map((todo) => (
-              <TodoItem
-              key={todo.id}
-              id={todo.id}
-              name = {todo.name}
-              done = {todo.done}
-              />
-            ))}
+             {todos}
           </div> 
           <Input
             filteredTodos={filteredTodos}
