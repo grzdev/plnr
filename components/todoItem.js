@@ -29,7 +29,7 @@ export default function TodoItem({name, done, id}) {
             htmlFor="todo"
             className={done && 'todo-label-done'}
             style={{
-              fontSize:"1rem",
+              fontSize:"0.8rem",
               fontFamily: "'Poppins', sans-serif"
             }}
         >{name}</label>
