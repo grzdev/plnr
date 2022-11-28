@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { BsPlusLg } from "react-icons/bs"
 import { saveTodo } from '../redux/slices/todoSlice'
+import { Button, FormControl, Input } from '@chakra-ui/react'
 
-export default function Input() {
+const input = () => {
     const [ input, setInput ] = useState('')  
     const dispatch = useDispatch()
     
@@ -16,25 +17,28 @@ export default function Input() {
         event.preventDefault(),
         setInput('')        
     }
+
   return (
-    <form className='input-box'>
-        <input
-            type="text" className='input'
+    <FormControl>
+       <Input
+            type="text"
             id='input'
             name='input'
             value={input}
             onChange={(e)=> setInput(e.target.value)}
-            placeholder="Add new todo..."
+            placeholder="Add new todo..." 
         />
-        <button
-            className='button'
+
+        <Button
             onClick={addTodo}
             disabled={!input}
             type="submit"
-            id='button'
+            id='button' 
         >
-            <BsPlusLg className='add-icon'/>
-        </button>
-    </form>
+            <BsPlusLg   />
+        </Button>
+    </FormControl>
   )
 }
+
+export default input

@@ -11,7 +11,7 @@ const todoSlice = createSlice({
     initialState,
     reducers:{
         saveTodo: (state, action) => {
-            state.todolist.push(action.payload)
+            state.todolist?.push(action.payload)
         },
         checkTodo: (state, action) => {
             state.todolist.map(todo =>{
