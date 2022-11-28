@@ -48,7 +48,7 @@ export default function Home() {
   
   //Loop
   let todos = [];
-  filteredTodos.forEach((todo)=>{
+  filteredTodos?.forEach((todo)=>{
     todos.push(<TodoItem
       key={todo.id}
       id={todo.id}
