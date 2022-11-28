@@ -60,9 +60,9 @@ export default function Home() {
   
   return (
     <div>
-      <div className="header-div">
+      {/* <div className="header-div">
           <h1 className="header1">Website Todo</h1>
-        </div>
+        </div> */}
       <div className='app'>
         <div className="dropDown">
           <CompletedTodos
