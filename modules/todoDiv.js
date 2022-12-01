@@ -35,12 +35,14 @@ const todoDiv = () => {
 
     let todos = [];
     filteredTodos?.forEach((todo)=>{
-      todos.push(<TodoItem
+      todos.push(
+      <TodoItem
         key={todo.id}
         id={todo.id}
         name = {todo.item}
         done = {todo.done}
-        />)
+        />
+      )
     })
   
 
