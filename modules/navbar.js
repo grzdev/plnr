@@ -11,7 +11,7 @@ const navbar = () => {
     <Flex>
         <Box 
           mr="auto"  
-          p="2rem"
+          p="2.5rem"
           display="flex"
         >
             <BiNotepad 
@@ -29,11 +29,11 @@ const navbar = () => {
         </Box>
 
         <Box
-            p="2rem"
+            p="2.5rem"
         >
             <Button 
                 onClick={toggleColorMode}
-                
+                size={["xs", "sm", "sm"]}
             >
                 {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
             </Button>    
