@@ -69,6 +69,7 @@ const todoDiv = () => {
             justifyContent="center"
             alignItems="center"
             flexDir="column"
+            mt="-1.6rem"
         >
             <Heading
                 color={textColor}
@@ -91,7 +92,7 @@ const todoDiv = () => {
                 w={[290, 300, 400]}
                 h={[450, 500, 500]}
                 boxShadow="rgba(0, 0, 0, 0.1) 0px 10px 50px;" 
-                mt={["1rem", "0.5rem", "0.5rem"]}
+                mt={["0.2rem", "-1.5rem", "-1.5rem"]}
                 flexDir="column"
                 alignItems="center"
                 mb={["5rem", "1rem", "1rem"]}

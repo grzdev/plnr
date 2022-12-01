@@ -21,8 +21,8 @@ const navbar = () => {
             <Text
                 fontSize="1.3rem"
                 fontWeight="700"
-                ml="0.2rem"
-                mt="0.1rem"
+                ml="0.1rem"
+                // mt="0.1rem"
             >
                 plnr
             </Text>
