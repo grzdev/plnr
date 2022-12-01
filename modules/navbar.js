@@ -24,7 +24,7 @@ const navbar = () => {
                 ml="0.2rem"
                 mt="0.1rem"
             >
-                todoList
+                plnr
             </Text>
         </Box>
 
