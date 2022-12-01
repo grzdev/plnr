@@ -1,43 +1,54 @@
+import { Box, Button, Checkbox, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
-import { checkTodo } from '../redux/slices/todoSlice'
+import { setTodo } from '../redux/slices/todoSlice'
 import { useDispatch } from 'react-redux'
-import { MdDeleteOutline } from "react-icons/md"
 import { deleteTodo } from '../redux/slices/todoSlice'
+import { DeleteIcon } from "@chakra-ui/icons"
+import { useColorModeValue } from '@chakra-ui/react'
 
-export default function TodoItem({name, done, id}) {
-  const dispatch = useDispatch()
+const TodoItem = ({name, done, id}) => {
+    const dispatch = useDispatch()
 
-    const handleCheckTodo = () =>{
-      dispatch(checkTodo(id))
+    const handleCheck = () => {
+        dispatch(setTodo(id))
     }
 
     const handleRemoveTodo = () =>{
-      dispatch(deleteTodo({id:id})) 
-    }
-  return (
-    <div className='todoItem'>
-        <input 
-            type="checkbox" 
-            id="todo" 
-            checked={done}
-            name="isFriendly"
-            className='todo-check'
-            onChange={handleCheckTodo}
-        />
-        <div className='todo-task'>
-        <label
-            htmlFor="todo"
-            className={done && 'todo-label-done'}
-            style={{
-              fontSize:"0.8rem",
-              fontFamily: "'Poppins', sans-serif"
-            }}
-        >{name}</label>
-        </div>
+        dispatch(deleteTodo({id:id})) 
+      }
 
-        <button className='delete-button' onClick={()=> handleRemoveTodo()}> 
-          <MdDeleteOutline />
-        </button>
-    </div>
+    const bgColor = useColorModeValue("#00308F", "#7CB9E8")
+  return (
+    <Flex
+        flexDir="row"
+        alignItems="center"
+        mt="1.5rem"
+    >
+        <Checkbox
+            onChange={handleCheck}
+            isChecked={done}
+            mr="0.5rem"
+        >
+
+        </Checkbox>
+
+        <Text 
+            textDecor={done ? "line-through" : "none"}
+            color={done? "grey" : "default"}
+            w={["10rem", "15rem", "15rem"]}
+            fontSize={["xs", "sm", "sm"]}
+        >
+            {name}
+        </Text>
+
+        <Button
+            onClick={()=> handleRemoveTodo()}
+            size={["xs", "sm", "sm"]}
+        >
+            <DeleteIcon color={bgColor}/>
+        </Button>
+    </Flex>
   )
 }
+
+export default TodoItem

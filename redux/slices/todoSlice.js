@@ -1,39 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    todolist: []
+    todoList : []
 }
 
-// const todoStore =  localStorage.setItem('todolist', JSON.stringify(todolist))
-
 const todoSlice = createSlice({
-    name: "todos",
-    initialState,
-    reducers:{
-        saveTodo: (state, action) => {
-            state.todolist.push(action.payload)
-        },
-        checkTodo: (state, action) => {
-            state.todolist.map(todo =>{
-                if(action.payload === todo.id){
-                    if(todo.done === true){
-                        todo.done = false
-                    }
-                    else{
-                        todo.done = true
-                    }
-                }
-            })
-        },
-        deleteTodo:(state, action) => {
-            // state.todolist.splice(action.payload, 1)
-            return { todolist: state.todolist.filter(todo =>
-                todo.id !== action.payload.id
-             )}
-        }
-    }
-})
+  name: "todos",
+  initialState,
+  reducers: {
+    saveTodo: (state, action ) => {
+      state.todoList.push(action.payload)
+    },
 
-export const { saveTodo, checkTodo, deleteTodo } = todoSlice.actions
-export const selectTodoList = state => state.todos.todolist
+    setTodo: (state, action) => {
+      state.todoList.map(item=>{
+        if(action.payload === item.id){
+          if(item.done === true){
+            item.done = false
+          } else{
+            item.done = true
+          }
+        }
+      })
+    },
+
+    deleteTodo:(state, action) => {
+      // state.todolist.splice(action.payload, 1)
+      return { todoList: state.todoList.filter(todo => todo.id !== action.payload.id
+      )}
+  }
+  }
+});
+
+export const { saveTodo, setTodo, deleteTodo } = todoSlice.actions
+export const selectTodoList = state => state.todos.todoList
 export default todoSlice.reducer
