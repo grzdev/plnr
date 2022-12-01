@@ -3,10 +3,10 @@ import { useState, useEffect} from 'react'
 import { Box, Container, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import { useColorModeValue } from '@chakra-ui/react'
 import TodoInput from '../components/TodoInput'
-import TodoItem from '../components/TodoItem'
 import { useSelector } from 'react-redux'
 import { selectTodoList } from '../redux/slices/todoSlice'
 import TodoStatus from '../components/TodoStatus'
+import Todo from '../components/Todo'
 
 const todoDiv = () => {
     
@@ -33,14 +33,27 @@ const todoDiv = () => {
       }
     }
 
-    let todos = [];
+    // let todos = [];
+    // filteredTodos?.forEach((todo)=>{
+    //   todos.push(
+    //   <TodoItem
+    //     key={todo.id}
+    //     id={todo.id}
+    //     name = {todo.item}
+    //     done = {todo.done}
+    //     />
+    //   )
+    // })
+    let todos = []
     filteredTodos?.forEach((todo)=>{
-      todos.push(<TodoItem
-        key={todo.id}
-        id={todo.id}
-        name = {todo.item}
-        done = {todo.done}
-        />)
+        todos.push(
+            <Todo
+                key={todo.id}
+                id={todo.id}
+                name={todo.item}
+                done={todo.done}
+            />
+        )
     })
   
 
