@@ -1,64 +1,49 @@
 import React from 'react'
-import TodoInput from "../components/input"
-import TodoItem from "../components/todoItem"
-import { useSelector } from 'react-redux'
 import { useState, useEffect} from 'react'
-import { selectTodoList } from '../redux/slices/todoSlice'
-import CompletedTodos from "../components/completedTodos"
 import { Box, Container, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import { useColorModeValue } from '@chakra-ui/react'
+import TodoInput from '../components/TodoInput'
+import TodoItem from '../components/TodoItem'
+import { useSelector } from 'react-redux'
+import { selectTodoList } from '../redux/slices/todoSlice'
+import TodoStatus from '../components/TodoStatus'
 
 const todoDiv = () => {
     
-  const todolist = useSelector(selectTodoList)
+    const todoList = useSelector(selectTodoList)
 
-  //completed todos
-  const [status, setStatus] = useState('all')
-  const [filteredTodos, setFilteredTodos] = useState([])
-
-  useEffect(()=>{
-    filterHandler();
-  },[todolist, status])
-
-  const filterHandler = () => {
-    switch (status) {
-      case "completed":
-        setFilteredTodos(todolist?.filter(todo => todo.done === true));
-        break;
-      case "uncompleted":
-        setFilteredTodos(todolist?.filter(todo => todo.done === false));
-        break;
-      default:
-        setFilteredTodos(todolist);
+    //Completed
+    const [status, setStatus] = useState('all')
+    const [filteredTodos, setFilteredTodos] = useState([])
+  
+    useEffect(()=>{
+      filterHandler();
+    },[todoList, status])
+  
+    const filterHandler = () => {
+      switch (status) {
+        case "completed":
+          setFilteredTodos(todoList.filter(todo => todo.done === true));
+          break;
+        case "uncompleted":
+          setFilteredTodos(todoList.filter(todo => todo.done === false));
+          break;
+        default:
+          setFilteredTodos(todoList);
+      }
     }
-  }
 
+    let todos = [];
+    filteredTodos?.forEach((todo)=>{
+      todos.push(<TodoItem
+        key={todo.id}
+        id={todo.id}
+        name = {todo.item}
+        done = {todo.done}
+        />)
+    })
   
 
-//   //darkMode
-//   const [theme, setTheme] = useState('light');
-//   const toggleTheme = () => {
-//     if (theme === 'light') {
-//       setTheme('dark');
-//     } else {
-//       setTheme('light');
-//     }
-//   };
-//   useEffect(() => {
-//     document.body.className = theme;
-//   }, [theme]);
-
-  
-  //Loop
-  let todos = [];
-  filteredTodos?.forEach((todo)=>{
-    todos.push(<TodoItem
-      key={todo.id}
-      id={todo.id}
-      name = {todo.name}
-      done = {todo.done}
-      />)
-  })
 
   const textColor = useColorModeValue("#00308F", "white")
   return (
@@ -82,7 +67,7 @@ const todoDiv = () => {
                 color={textColor}
                 fontWeight="700"
             >
-                what do you want to do today..
+                what do you want to do today?
             </Text>
         </Flex>
 
@@ -97,24 +82,32 @@ const todoDiv = () => {
                 flexDir="column"
                 alignItems="center"
             >
-                <Flex
-                  float="left"
-                  p="1rem"
-                >
-                    <CompletedTodos
+            <Box
+                mt="0.7rem"
+            >
+                <TodoStatus
                     setStatus={setStatus}
-                    /> 
-                </Flex>
-
-                {todos}
-            
+                />
+            </Box>
                 
-                <Box>
-                    <TodoInput
-                     filteredTodos={filteredTodos}
+            <Box
+            >
+              {/* {
+                todoList?.map(item=>(
+                    <TodoItem
+                        key={item.id}
+                        name= {item.item}
+                        done={item.done}
+                        id={item.id}
                     />
-                </Box>
-
+                ))
+            } */}
+            {todos}
+            </Box>
+          
+            <TodoInput
+                filteredTodos={filteredTodos}
+            />
 
             </Flex>
         </Flex>
