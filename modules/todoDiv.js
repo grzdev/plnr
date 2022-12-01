@@ -85,15 +85,16 @@ const todoDiv = () => {
         </Flex>
 
         <Flex
-            px={[0, 7, 10]} 
+            py={[4, 9, 12]} 
         >
             <Flex 
                 w={[290, 300, 400]}
                 h={[450, 500, 500]}
                 boxShadow="rgba(0, 0, 0, 0.1) 0px 10px 50px;" 
-                mt={["2rem", "1rem", "1rem"]}
+                mt={["1rem", "0.5rem", "0.5rem"]}
                 flexDir="column"
                 alignItems="center"
+                mb={["5rem", "1rem", "1rem"]}
             >
             <Box
                 mt="0.7rem"
